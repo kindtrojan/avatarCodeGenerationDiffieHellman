@@ -1,0 +1,23 @@
+How to integrate the files in TTool ?
+----------------------------------------
+
+from src_and_make:
+---------------------
+seccomm.c and seccomm.h are put in TTool/executablecode/src
+
+Makefile and Makefile.defs are placed in TTool/executablecode/lib/generated_src.
+---------------------
+
+from modifsToTTool:
+-------------------
+TaskFile.java is placed in TTool/src/main/java/avatartranslator/toexecutable.
+this needs a "make ttoolnotest" 
+
+---------------------
+Load ChapApps.xml for client and server code.
+------------------------------------------
+Generate server app(rename and store it before generating other apps)
+
+Generate client app, give appropriate id number(advertise_client_id(x) ).
+
+Generate another client app, give appropriate id number( advertise_client_id(y) ) and if you wish to, you can do a start_keyexchange_initiator(x), so that the client does a DH key exchange with the client x.(make sure client x is running before starting client y)
